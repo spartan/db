@@ -1,0 +1,58 @@
+{
+    "name": "spartan/db",
+    "description": "Spartan Db library",
+    "type": "library",
+    "keywords": [
+        "library",
+        "spartan",
+        "db"
+    ],
+    "homepage": "https://spartanphp.com",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Iulian N.",
+            "email": "iulian@spartanphp.com",
+            "homepage": "https://spartanphp.com",
+            "role": "developer"
+        }
+    ],
+    "support": {
+        "email": "support@spartanphp.com",
+        "docs": "https://docs.spartanphp.com"
+    },
+    "repositories": [
+        {
+            "type": "vcs",
+            "url": "https://github.com/rentpost/Propel2"
+        }
+    ],
+    "require": {
+        "php": ">=7.4",
+        "ext-simplexml": "*",
+        "rentpost/propel": "dev-master",
+        "monolog/monolog": "^2.2",
+        "spartan/console": "dev-master"
+    },
+    "autoload": {
+        "psr-4": {
+            "Spartan\\Db\\": "src/"
+        }
+    },
+    "require-dev": {
+        "phpunit/phpunit": "^9.0",
+        "fzaninotto/faker": "^1.9"
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Spartan\\Db\\Test\\": "tests/"
+        }
+    },
+    "config": {
+        "sort-packages": true
+    },
+    "scripts": {
+    },
+    "minimum-stability": "dev",
+    "prefer-stable": true
+}
