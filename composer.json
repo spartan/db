@@ -30,9 +30,9 @@
     "require": {
         "php": ">=7.4",
         "ext-simplexml": "*",
-        "rentpost/propel": "dev-master",
         "monolog/monolog": "^2.2",
-        "spartan/console": "dev-master"
+        "rentpost/propel": "dev-master",
+        "spartan/console": "^0.1.0"
     },
     "autoload": {
         "psr-4": {
@@ -51,7 +51,49 @@
     "config": {
         "sort-packages": true
     },
-    "scripts": {
+    "extra": {
+        "spartan": {
+            "install": {
+                "env": {
+                    "DB_ADAPTER": "mysql",
+                    "DB_NAME": "@php getenv('APP_SLUG') ?: 'spartan';",
+                    "DB_HOST": "localhost",
+                    "DB_USER": "@php getenv('APP_SLUG') ?: 'spartan';",
+                    "DB_PASS": "@php \\Spartan\\Provisioner\\Command\\Password\\Make::generate(24);",
+                    "DB_CHAR": "utf8",
+                    "DB_ROOT": "@php \\Spartan\\Provisioner\\Command\\Password\\Make::generate(32);",
+                    "DB_REMOTE": 0,
+                    "DB_REMOTE_HOST": "0.0.0.0",
+                    "DB_REMOTE_USER": "remote",
+                    "DB_REMOTE_PASS": "@php \\Spartan\\Provisioner\\Command\\Password\\Make::generate(32);",
+                    "DB_REMOTE_PORT": "3306",
+                    "MIGRATIONS_ENV_PREFIX": "DB_REMOTE_,DB_",
+                    "MIGRATIONS_DB_TABLE": "spartan_migration",
+                    "MIGRATIONS_DIR": "./data/migrations",
+                    "MIGRATIONS_TIMESTAMP": "utc"
+                },
+                "copy": {
+                    "config/propel.php": "config/propel.php",
+                    "config/propel_schema.php": "config/propel_schema.php"
+                },
+                "commands": [
+                    "__DIR__ . '/../vendor/spartan/db/src/Command'"
+                ],
+                "scripts": [
+                    "mkdir -p ./data/migrations"
+                ],
+                "help": [
+                    "If you use the remote feature, make sure you update the DB_REMOTE_* environment!",
+                    "Run `propel:diff` to generate db models after you have tables created",
+                    "Run `migration:init` to provision the db migrations"
+                ]
+            },
+            "uninstall": {
+                "help": [
+                    "To manually remove migrations run `rm -Rf ./data/migrations`"
+                ]
+            }
+        }
     },
     "minimum-stability": "dev",
     "prefer-stable": true
