@@ -1,4 +1,11 @@
 # Changelog
+### [0.1.2](https://github.com/spartan/db/compare/v0.1.1...v0.1.2) (2021-03-05)
+
+
+### Changes
+
+* move propel from require to suggest ([d13dfd5](https://github.com/spartan/db/commit/d13dfd5adf0c18f9657b0b3547104cdc7f845921))
+
 ### [0.1.1](https://github.com/spartan/db/compare/v0.1.0...v0.1.1) (2021-03-04)
 
 
