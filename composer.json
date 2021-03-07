@@ -54,6 +54,7 @@
                     "DB_ADAPTER": "mysql",
                     "DB_NAME": "@php getenv('APP_SLUG') ?: 'spartan';",
                     "DB_HOST": "localhost",
+                    "DB_PORT": "3306",
                     "DB_USER": "@php getenv('APP_SLUG') ?: 'spartan';",
                     "DB_PASS": "@php \\Spartan\\Provisioner\\Command\\Password\\Make::generate(24);",
                     "DB_CHAR": "utf8",
@@ -66,7 +67,9 @@
                     "MIGRATIONS_ENV_PREFIX": "DB_REMOTE_,DB_",
                     "MIGRATIONS_DB_TABLE": "spartan_migration",
                     "MIGRATIONS_DIR": "./data/migrations",
-                    "MIGRATIONS_TIMESTAMP": "utc"
+                    "MIGRATIONS_TIMESTAMP": "utc",
+                    "PROPEL_DEBUG": "",
+                    "PROPEL_PROFILE": ""
                 },
                 "copy": {
                     "config/propel.php": "config/propel.php",
