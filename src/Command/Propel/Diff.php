@@ -34,7 +34,7 @@ class Diff extends Command
      */
     protected function execute(InputInterface $input, OutputInterface $output)
     {
-        $this->loadEnv();
+        self::loadEnv();
 
         $propelDir = getcwd() . '/' . $this->dir;
 

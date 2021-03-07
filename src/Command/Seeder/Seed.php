@@ -17,7 +17,7 @@ class Seed extends Command
 {
     protected function configure()
     {
-        $this->withSynopsis('seed:db', 'Run a seeder')->withArgument('name', 'Seeder name');
+        $this->withSynopsis('db:seed', 'Run a seeder')->withArgument('name', 'Seeder name');
     }
 
     /**
@@ -29,7 +29,7 @@ class Seed extends Command
      */
     protected function execute(InputInterface $input, OutputInterface $output)
     {
-        $this->loadEnv();
+        self::loadEnv();
 
         $className = getenv('APP_NAME') . '\\Domain\\Seeder\\' . ucfirst($input->getArgument('name'));
 
