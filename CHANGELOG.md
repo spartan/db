@@ -1,4 +1,16 @@
 # Changelog
+### [0.1.4](https://github.com/spartan/db/compare/v0.1.3...v0.1.4) (2021-03-10)
+
+
+### Fixes
+
+* migration commands namespace ([e5aceaf](https://github.com/spartan/db/commit/e5aceafa1fe65e0e0ac93ab11e7e920d8c78683a))
+
+
+### New
+
+* migration reset command ([459d6ab](https://github.com/spartan/db/commit/459d6ab520879238b9ee7d541fc6d993d9d0c5fc))
+
 ### [0.1.3](https://github.com/spartan/db/compare/v0.1.2...v0.1.3) (2021-03-07)
 
 
