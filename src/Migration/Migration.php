@@ -7,7 +7,7 @@ use Spartan\Db\Migration\Engine\Mysql;
 /**
  * Migration Migration
  *
- * @package Spartan\Migration
+ * @package Spartan\Db\Migration
  * @author  Iulian N. <iulian@spartanphp.com>
  * @license LICENSE MIT
  */
@@ -36,7 +36,7 @@ class Migration
             throw new \InvalidArgumentException('Adapter not supported: ' . $con['adapter']);
         }
 
-        $adapter = '\\Spartan\\Migration\\Schema\\' . ucfirst($con['adapter']);
+        $adapter = '\\Spartan\\Db\\Migration\\Engine\\' . ucfirst($con['adapter']);
 
         return new $adapter($this->pdo());
     }

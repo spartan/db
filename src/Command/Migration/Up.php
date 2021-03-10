@@ -1,6 +1,6 @@
 <?php
 
-namespace Spartan\Migration\Command;
+namespace Spartan\Db\Command\Migration;
 
 use Spartan\Console\Command;
 use Spartan\Db\Migration\Migration;
@@ -12,7 +12,7 @@ use Symfony\Component\Console\Output\OutputInterface;
  *
  * @property int $limit
  *
- * @package Spartan\Migration
+ * @package Spartan\Db\Migration
  * @author  Iulian N. <iulian@spartanphp.com>
  * @license LICENSE MIT
  */
