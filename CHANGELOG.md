@@ -1,4 +1,11 @@
 # Changelog
+### [0.1.5](https://github.com/spartan/db/compare/v0.1.4...v0.1.5) (2021-03-31)
+
+
+### Fixes
+
+* migration diff missing end of query on rename column ([26f9171](https://github.com/spartan/db/commit/26f91719285e9b5579d256d52265bd53be611eda))
+
 ### [0.1.4](https://github.com/spartan/db/compare/v0.1.3...v0.1.4) (2021-03-10)
 
 
