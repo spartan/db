@@ -38,6 +38,7 @@ class Import extends Command
 
         $sql = file_get_contents($input->getArgument('file'));
 
+        $output->writeln('Importing ' . $input->getArgument('file') . '...');
         $adapter->exec($sql);
 
         return 0;

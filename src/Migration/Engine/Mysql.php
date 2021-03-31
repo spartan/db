@@ -259,8 +259,8 @@ class Mysql
                         $deletedColumnName = array_search($createdColumnType, $deletedColumns);
                         unset($deletedColumns[$deletedColumnName]);
                         // renamed
-                        $upSql[]   = "ALTER TABLE `{$tableName}` RENAME COLUMN `{$deletedColumnName}` TO `{$createdColumnName}`";
-                        $downSql[] = "ALTER TABLE `{$tableName}` RENAME COLUMN `{$createdColumnName}` TO `{$deletedColumnName}`";
+                        $upSql[]   = "ALTER TABLE `{$tableName}` RENAME COLUMN `{$deletedColumnName}` TO `{$createdColumnName}`;";
+                        $downSql[] = "ALTER TABLE `{$tableName}` RENAME COLUMN `{$createdColumnName}` TO `{$deletedColumnName}`;";
                     } else {
                         // created
                         $after     = $newTableFields[array_search($createdColumnName, $newTableFields) - 1];
