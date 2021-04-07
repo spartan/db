@@ -42,6 +42,7 @@ class Reset extends Command
                 $output->writeln('Importing ' . $file . '...');
                 $sql = file_get_contents($file);
                 $adapter->exec($sql);
+                $adapter->apply($migration->table(), substr($file, strrpos($file, '/') + 1));
             }
         }
 
