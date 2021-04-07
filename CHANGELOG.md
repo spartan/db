@@ -1,4 +1,11 @@
 # Changelog
+### [0.1.6](https://github.com/spartan/db/compare/v0.1.5...v0.1.6) (2021-04-07)
+
+
+### Fixes
+
+* reset migration table on migration:reset ([90b4b9a](https://github.com/spartan/db/commit/90b4b9a28629d861218e308a6352658769a6b84f))
+
 ### [0.1.5](https://github.com/spartan/db/compare/v0.1.4...v0.1.5) (2021-03-31)
 
 
