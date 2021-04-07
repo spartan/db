@@ -1,4 +1,11 @@
 # Changelog
+### [0.1.7](https://github.com/spartan/db/compare/v0.1.6...v0.1.7) (2021-04-07)
+
+
+### Fixes
+
+* migration:diff command order of queries on foreign keys drop ([015ff08](https://github.com/spartan/db/commit/015ff08ae573d1c82554e310eda273502a7d5705))
+
 ### [0.1.6](https://github.com/spartan/db/compare/v0.1.5...v0.1.6) (2021-04-07)
 
 
