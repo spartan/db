@@ -19,8 +19,8 @@ class Import extends Command
     protected function configure()
     {
         $this->withSynopsis('migration:import', 'Import an SQL file')
-            ->withArgument('file', 'Path to SQL file')
-            ->withOption('config', 'Path to config', './config/.env');
+             ->withArgument('file', 'Path to SQL file')
+             ->withOption('config', 'Path to config', './config/.env');
     }
 
     /**
@@ -39,7 +39,7 @@ class Import extends Command
         $sql = file_get_contents($input->getArgument('file'));
 
         $output->writeln('Importing ' . $input->getArgument('file') . '...');
-        $adapter->exec($sql);
+        $adapter->exec($sql, false);
 
         return 0;
     }

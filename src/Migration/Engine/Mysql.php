@@ -76,8 +76,14 @@ class Mysql
      *
      * @throws \Exception
      */
-    public function exec($sql)
+    public function exec($sql, bool $skipFkChecks = true)
     {
+        if ($skipFkChecks) {
+            $sql = 'SET foreign_key_checks = 0;'
+                . PHP_EOL . $sql . PHP_EOL
+                . 'SET foreign_key_checks = 1;';
+        }
+
         if (false === $this->pdo->exec($sql)) {
             throw new \Exception(json_encode($this->pdo->errorInfo()));
         }

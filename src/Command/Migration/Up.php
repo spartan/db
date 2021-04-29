@@ -44,6 +44,7 @@ class Up extends Command
         $existingMigrations = $migration->migrations();
 
         $unAppliedMigrations = array_diff($existingMigrations, $appliedMigrations);
+        sort($unAppliedMigrations);
 
         if (!$unAppliedMigrations) {
             $this->note('No migrations to apply!');

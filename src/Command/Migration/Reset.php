@@ -40,8 +40,8 @@ class Reset extends Command
         foreach ($files as $file) {
             if (substr($file, -4) == '.sql') {
                 $output->writeln('Importing ' . $file . '...');
-                $sql = file_get_contents($file);
-                $adapter->exec($sql);
+                $sql = explode('--@UNDO', file_get_contents($file))[0];
+                $adapter->exec(trim($sql));
                 $adapter->apply($migration->table(), substr($file, strrpos($file, '/') + 1));
             }
         }
