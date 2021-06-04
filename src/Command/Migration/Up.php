@@ -36,8 +36,7 @@ class Up extends Command
      */
     protected function execute(InputInterface $input, OutputInterface $output)
     {
-        $envFile   = $input->getOption('config');
-        $migration = new Migration($envFile);
+        $migration = new Migration($input->getOption('config'));
         $adapter   = $migration->adapter();
 
         $appliedMigrations  = $adapter->appliedMigrations($migration->table());

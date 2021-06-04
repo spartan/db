@@ -13,11 +13,19 @@ use Spartan\Db\Migration\Engine\Mysql;
  */
 class Migration
 {
-    protected string $envFile;
+    /**
+     * Possible values:
+     * - string - path to env file
+     * - array  - config
+     * - null   - use global environment
+     *
+     * @var mixed
+     */
+    protected $env;
 
-    public function __construct(string $envFile = './config/.env')
+    public function __construct($env = null)
     {
-        $this->envFile = $envFile;
+        $this->env = $env;
     }
 
     /*
@@ -46,16 +54,9 @@ class Migration
      */
     public function connectionConfig(): array
     {
-        if (!file_exists($this->envFile)) {
-            throw new \LogicException('The migrations configuration file could not be found!');
-        }
+        $config = $this->config();
 
-        // parse migration env
-        $cfg = parse_ini_file($this->envFile, false, INI_SCANNER_RAW) ?: [];
-
-        // parse project env
-        $env      = parse_ini_file($this->envFile, false, INI_SCANNER_RAW);
-        $prefixes = explode(',', $cfg['MIGRATIONS_ENV_PREFIX']) ?: ['DB_'];
+        $prefixes = explode(',', $config['MIGRATIONS_ENV_PREFIX']) ?: ['DB_'];
 
         // db connection data
         $con = [];
@@ -65,7 +66,7 @@ class Migration
                     continue;
                 }
 
-                $con[$suffix] = $env[strtoupper("{$prefix}{$suffix}")] ?? null;
+                $con[$suffix] = $config[strtoupper("{$prefix}{$suffix}")] ?? null;
             }
         }
 
@@ -129,7 +130,14 @@ class Migration
      */
     public function config(): array
     {
-        return parse_ini_file($this->envFile, false, INI_SCANNER_RAW) ?: [];
+        switch (gettype($this->env)) {
+            case 'string':
+                return parse_ini_file($this->env, false, INI_SCANNER_RAW) ?: [];
+            case 'array':
+                return $this->env;
+            default:
+                return getenv();
+        }
     }
 
     /**

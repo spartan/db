@@ -178,9 +178,9 @@ class Mysql
         $upSql[] = $checkColumns['up'];
 
         $downSql[] = $checkTables['down'];
-        $downSql[] = $checkConstraints['down'];
-        $downSql[] = $checkIndexes['down'];
         $downSql[] = $checkColumns['down'];
+        $downSql[] = $checkIndexes['down'];
+        $downSql[] = $checkConstraints['down'];
 
         return [
             'up'   => implode("\n", $upSql),

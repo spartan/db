@@ -19,7 +19,7 @@ class Init extends Command
     protected function configure()
     {
         $this->withSynopsis('migration:init', 'Init migration configuration file')
-             ->withOption('file', 'Path to config', './config/.env');
+             ->withOption('config', 'Path to config', './config/.env');
     }
 
     /**
@@ -31,7 +31,7 @@ class Init extends Command
      */
     protected function execute(InputInterface $input, OutputInterface $output)
     {
-        $envFile = $input->getOption('file');
+        $envFile = $input->getOption('config');
 
         $env                          = [];
         $env['MIGRATIONS_ENV_PREFIX'] = $this->inquire('Environment variables prefix (DB_REMOTE_,DB_): ') ?: 'DB_REMOTE_,DB_';

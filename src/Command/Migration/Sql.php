@@ -20,7 +20,7 @@ class Sql extends Command
     {
         $this->withSynopsis('migration:sql', 'Generate SQL for current db')
              ->withOption('dir', 'Path to save into', '/dump')
-             ->withOption('file', 'Path to config', './config/.env');
+             ->withOption('config', 'Path to config', './config/.env');
     }
 
     /**
@@ -32,11 +32,10 @@ class Sql extends Command
      */
     protected function execute(InputInterface $input, OutputInterface $output)
     {
-        $envFile = $input->getOption('file');
         $dirPath = $input->getOption('dir');
 
         // using mysql for now
-        $migration = new Migration($envFile);
+        $migration = new Migration($input->getOption('config'));
         $adapter   = $migration->adapter();
 
         if (!file_exists($migration->dir() . $dirPath)) {

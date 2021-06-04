@@ -144,6 +144,17 @@ class Propel2
               ->commit();
     }
 
+    /**
+     * @param string|null $name
+     * @param string      $mode
+     */
+    public static function rollback(string $name = null, $mode = ServiceContainerInterface::CONNECTION_WRITE)
+    {
+        Propel::getServiceContainer()
+              ->getConnection($name, $mode)
+              ->rollback();
+    }
+
     /*
      * Helpers
      */
