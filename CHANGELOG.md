@@ -1,4 +1,11 @@
 # Changelog
+### [0.1.9](https://github.com/spartan/db/compare/v0.1.8...v0.1.9) (2021-06-04)
+
+
+### Fixes
+
+* db migration commands fallback to global env when config file not found ([47131d8](https://github.com/spartan/db/commit/47131d82269c6a6b620071cb6bba8ab157a64797))
+
 ### [0.1.8](https://github.com/spartan/db/compare/v0.1.7...v0.1.8) (2021-04-29)
 
 
