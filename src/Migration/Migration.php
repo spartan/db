@@ -25,7 +25,7 @@ class Migration
 
     public function __construct($env = null)
     {
-        $this->env = $env;
+        $this->env = $env ?: null;
     }
 
     /*
