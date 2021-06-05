@@ -1,4 +1,11 @@
 # Changelog
+### [0.1.10](https://github.com/spartan/db/compare/v0.1.9...v0.1.10) (2021-06-05)
+
+
+### Fixes
+
+* migration command env loading from globals ([d9e741d](https://github.com/spartan/db/commit/d9e741d057ec48fb487b6960afa3eca902812dcd))
+
 ### [0.1.9](https://github.com/spartan/db/compare/v0.1.8...v0.1.9) (2021-06-04)
 
 
