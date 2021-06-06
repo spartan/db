@@ -1,4 +1,11 @@
 # Changelog
+### [0.1.11](https://github.com/spartan/db/compare/v0.1.10...v0.1.11) (2021-06-06)
+
+
+### Changes
+
+* smart fallback for env config with migration commands ([a2ae44e](https://github.com/spartan/db/commit/a2ae44e082aac4c862c13bc61453c03089f141af))
+
 ### [0.1.10](https://github.com/spartan/db/compare/v0.1.9...v0.1.10) (2021-06-05)
 
 
