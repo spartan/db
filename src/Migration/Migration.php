@@ -25,7 +25,7 @@ class Migration
 
     public function __construct($env = null)
     {
-        $this->env = $env ?: null;
+        $this->env = $env;
     }
 
     /*
@@ -130,14 +130,41 @@ class Migration
      */
     public function config(): array
     {
-        switch (gettype($this->env)) {
-            case 'string':
+        /*
+         * First we check user config
+         */
+        if ($this->env) {
+            if (is_string($this->env)) {
                 return parse_ini_file($this->env, false, INI_SCANNER_RAW) ?: [];
-            case 'array':
+            } elseif (is_array($this->env)) {
                 return $this->env;
-            default:
-                return getenv();
+            }
+
+            throw new \InvalidArgumentException('Unknown environment variable type');
         }
+
+        /*
+         * Second we check globals
+         */
+        if (getenv('MIGRATIONS_DIR')) {
+            return getenv();
+        }
+
+        /*
+         * Third we check default config files
+         */
+        $envFiles = [
+            '.env',
+            './config/.env'
+        ];
+
+        foreach ($envFiles as $envFile) {
+            if (file_exists($envFile)) {
+                return parse_ini_file($this->env, false, INI_SCANNER_RAW) ?: [];
+            }
+        }
+
+        throw new \InvalidArgumentException('Could not load env file');
     }
 
     /**

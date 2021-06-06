@@ -1,6 +1,8 @@
 <?php
 
-$env = parse_ini_file(__DIR__ . '/.env', false, INI_SCANNER_RAW);
+$env = file_exists(__DIR__ . '/.env')
+    ? parse_ini_file(__DIR__ . '/.env', false, INI_SCANNER_RAW)
+    : getenv();
 
 $adapter = $env['DB_ADAPTER'];
 $name    = $env['DB_NAME'];
