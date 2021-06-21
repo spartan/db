@@ -21,7 +21,7 @@ class Down extends Command
     protected function configure()
     {
         $this->withSynopsis('migration:down', 'Undo migrations. One step at a time.')
-             ->withOption('config', 'Path to config', './config/.env')
+             ->withOption('config', 'Path to config')
              ->withOption('dry', 'Dry run. Do not apply anything')
              ->withOption('limit', 'How many steps to undo. Default one.', 1);
     }

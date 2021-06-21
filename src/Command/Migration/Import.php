@@ -20,7 +20,7 @@ class Import extends Command
     {
         $this->withSynopsis('migration:import', 'Import an SQL file')
              ->withArgument('file', 'Path to SQL file')
-             ->withOption('config', 'Path to config', './config/.env');
+             ->withOption('config', 'Path to config');
     }
 
     /**

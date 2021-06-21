@@ -20,7 +20,7 @@ class Sql extends Command
     {
         $this->withSynopsis('migration:sql', 'Generate SQL for current db')
              ->withOption('dir', 'Path to save into', '/dump')
-             ->withOption('config', 'Path to config', './config/.env');
+             ->withOption('config', 'Path to config');
     }
 
     /**

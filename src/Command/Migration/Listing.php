@@ -21,7 +21,7 @@ class Listing extends Command
     protected function configure()
     {
         $this->withSynopsis('migration:list', 'Show migrations')
-             ->withOption('config', 'Path to config', './config/.env')
+             ->withOption('config', 'Path to config')
              ->withOption('limit', 'How many to show. Default 20', 20);
     }
 

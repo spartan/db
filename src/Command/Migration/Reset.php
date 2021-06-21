@@ -19,7 +19,7 @@ class Reset extends Command
     protected function configure()
     {
         $this->withSynopsis('migration:reset', 'Reset DB using sql migration files')
-             ->withOption('config', 'Path to config', './config/.env');
+             ->withOption('config', 'Path to config');
     }
 
     /**

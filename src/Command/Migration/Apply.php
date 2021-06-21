@@ -19,7 +19,7 @@ class Apply extends Command
     protected function configure()
     {
         $this->withSynopsis('migration:apply', 'Apply an un-applied migration. Use carefully!')
-             ->withOption('config', 'Path to config', './config/.env');
+             ->withOption('config', 'Path to config');
     }
 
     /**

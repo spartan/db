@@ -21,7 +21,7 @@ class Up extends Command
     protected function configure()
     {
         $this->withSynopsis('migration:up', 'Apply migrations. One step at a time.')
-            ->withOption('config', 'Path to config', './config/.env')
+            ->withOption('config', 'Path to config')
              ->withOption('dry', 'Dry run. Do not apply anything')
              ->withOption('all', 'Apply all migrations')
              ->withOption('limit', 'How many steps to apply. Default one.', 1);

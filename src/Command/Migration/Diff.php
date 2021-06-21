@@ -22,7 +22,7 @@ class Diff extends Command
     {
         $this->withSynopsis('migration:diff', 'Generate a migration SQL file')
              ->withArgument('name', 'Name your migration')
-             ->withOption('config', 'Path to config', './config/.env')
+             ->withOption('config', 'Path to config')
              ->withOption('dry', 'Dry run. Only shows sql');
     }
 

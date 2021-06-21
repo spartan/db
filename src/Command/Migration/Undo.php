@@ -19,7 +19,7 @@ class Undo extends Command
     protected function configure()
     {
         $this->withSynopsis('migration:undo', 'Undo an applied migration. Use carefully!')
-             ->withOption('config', 'Path to config', './config/.env');
+             ->withOption('config', 'Path to config');
     }
 
     /**
