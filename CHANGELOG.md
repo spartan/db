@@ -1,4 +1,11 @@
 # Changelog
+### [0.1.12](https://github.com/spartan/db/compare/v0.1.11...v0.1.12) (2021-06-21)
+
+
+### Fixes
+
+* remove default path to config on migration commands - using fallback now ([0ab7535](https://github.com/spartan/db/commit/0ab753555b2885dba85c3cae1e4b946290eceaa8))
+
 ### [0.1.11](https://github.com/spartan/db/compare/v0.1.10...v0.1.11) (2021-06-06)
 
 
