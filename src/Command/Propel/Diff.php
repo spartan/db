@@ -63,8 +63,10 @@ class Diff extends Command
         passthru("mv {$propelDir}/generated-classes/{$app}/Domain/Model/Base  {$cwd}/src/Domain/Model/Base");
         passthru("mv {$propelDir}/generated-classes/{$app}/Domain/Model/Map   {$cwd}/src/Domain/Model/Map");
         passthru("cp -n {$propelDir}/generated-classes/{$app}/Domain/Model/*.php {$cwd}/src/Domain/Model/");
+        passthru("mv {$propelDir}/generated-conf/loadDatabase.php {$cwd}/config/propel_map.php");
 
         // cleanup
+        passthru("rm -Rf {$propelDir}/generated-conf");
         passthru("rm -Rf {$propelDir}/generated-classes");
         passthru("rm -Rf {$propelDir}/generated-reversed-database");
 

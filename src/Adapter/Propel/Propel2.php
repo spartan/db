@@ -41,7 +41,7 @@ class Propel2
 
         /** @var StandardServiceContainer $serviceContainer */
         $serviceContainer = Propel::getServiceContainer();
-        $serviceContainer->checkVersion('2.0.0-dev');
+        $serviceContainer->checkVersion(2);
         $serviceContainer->setAdapterClass($name, $connection['adapter']);
 
         /*
@@ -88,6 +88,8 @@ class Propel2
             $profiler->start();
             $serviceContainer->setProfiler($profiler);
         }
+
+        require_once './config/propel_map.php';
 
         return $serviceContainer;
     }
