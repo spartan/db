@@ -1,4 +1,11 @@
 # Changelog
+### [0.1.13](https://github.com/spartan/db/compare/v0.1.12...v0.1.13) (2021-12-14)
+
+
+### Changes
+
+* switch to propel/propel package ([292a845](https://github.com/spartan/db/commit/292a84545b245d4608c57e047e0b932d8e4f80f2))
+
 ### [0.1.12](https://github.com/spartan/db/compare/v0.1.11...v0.1.12) (2021-06-21)
 
 
