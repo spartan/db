@@ -1,4 +1,11 @@
 # Changelog
+### [0.1.14](https://github.com/spartan/db/compare/v0.1.13...v0.1.14) (2024-04-29)
+
+
+### Changes
+
+* php 8.1 support by upgrading to 2.0.0-beta2 ([406d7e2](https://github.com/spartan/db/commit/406d7e297a4ac7a3183ff714ed0688b257201e5f))
+
 ### [0.1.13](https://github.com/spartan/db/compare/v0.1.12...v0.1.13) (2021-12-14)
 
 
