@@ -43,7 +43,7 @@
     },
     "suggest": {
         "rentpost/propel": "Add propel support. Use repository VCS: https://github.com/rentpost/Propel2",
-        "propep/propel": "Add propel support: (propel/propel: 2.0.0-beta1)"
+        "propep/propel": "Add propel support: (propel/propel: 2.0.0-beta2)"
     },
     "config": {
         "sort-packages": true

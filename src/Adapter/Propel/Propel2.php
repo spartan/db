@@ -7,7 +7,7 @@ use InvalidArgumentException;
 use Monolog\Formatter\LineFormatter;
 use Monolog\Handler\StreamHandler;
 use Monolog\Logger;
-use Propel\Runtime\Connection\ConnectionManagerMasterSlave;
+use Propel\Runtime\Connection\ConnectionManagerPrimaryReplica;
 use Propel\Runtime\Connection\ConnectionManagerSingle;
 use Propel\Runtime\Map\TableMap;
 use Propel\Runtime\Propel;
@@ -48,7 +48,7 @@ class Propel2
          * Manager
          */
         if ($connection['slaves'] ?? []) {
-            $manager = new ConnectionManagerMasterSlave();
+            $manager = new ConnectionManagerPrimaryReplica();
             $manager->setWriteConfiguration($connection);
             $manager->setReadConfiguration($connection['slaves']);
         } else {
@@ -57,7 +57,7 @@ class Propel2
         }
 
         $manager->setName($name);
-        $serviceContainer->setConnectionManager($name, $manager);
+        $serviceContainer->setConnectionManager($manager);
         $serviceContainer->setDefaultDatasource($name);
 
         /*
