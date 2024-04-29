@@ -52,7 +52,7 @@ class Propel2
             $manager->setWriteConfiguration($connection);
             $manager->setReadConfiguration($connection['slaves']);
         } else {
-            $manager = new ConnectionManagerSingle();
+            $manager = new ConnectionManagerSingle($name);
             $manager->setConfiguration($connection);
         }
 
