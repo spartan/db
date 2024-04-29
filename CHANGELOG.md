@@ -1,4 +1,11 @@
 # Changelog
+### [0.1.15](https://github.com/spartan/db/compare/v0.1.14...v0.1.15) (2024-04-29)
+
+
+### Fixes
+
+* regression issue ([53f1ec2](https://github.com/spartan/db/commit/53f1ec22b1e2ea1da8a1bd719b864058894216f1))
+
 ### [0.1.14](https://github.com/spartan/db/compare/v0.1.13...v0.1.14) (2024-04-29)
 
 
