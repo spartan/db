@@ -1,4 +1,11 @@
 # Changelog
+### [0.1.16](https://github.com/spartan/db/compare/v0.1.15...v0.1.16) (2025-12-19)
+
+
+### Changes
+
+* accept spartan/console:0.2 ([cab6713](https://github.com/spartan/db/commit/cab67139e626e72b210dbdf0bf1fab9839494a66))
+
 ### [0.1.15](https://github.com/spartan/db/compare/v0.1.14...v0.1.15) (2024-04-29)
 
 
